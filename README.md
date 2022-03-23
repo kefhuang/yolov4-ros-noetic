@@ -9,7 +9,7 @@ This is a ROS package for YOLOv4. It is modified from the repository https://git
 In order to install darknet_ros, clone the latest version from this repository into your catkin workspace and compile the package using ROS.
 
     cd yolov4-ws/src
-    git clone --recursive git@github.com:leggedrobotics/darknet_ros.git
+    git clone --recursive https://github.com/t1mkhuan9/yolov4-ros-noetic
     cd ../
 
 To maximize performance, make sure to build in *Release* mode. You can specify the build type by setting
