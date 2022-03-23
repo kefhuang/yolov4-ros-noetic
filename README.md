@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a ROS package for YOLOv4. It is modified from the repository https://github.com/leggedrobotics/darknet_ros/
+This is a ROS package for YOLOv4. It is modified from the repository https://github.com/leggedrobotics/darknet_ros/. It has been tested on ROS Noetic.
 
 ## Installation
 
