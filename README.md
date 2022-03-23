@@ -1,71 +1,14 @@
-# YOLO ROS: Real-Time Object Detection for ROS
+# YOLOv4 ROS
 
 ## Overview
 
-This is a ROS package developed for **object detection in camera images**. You only look once (YOLO) is a state-of-the-art, real-time object detection system. In the following ROS package you are able to use **YOLO (V3) on GPU and CPU**. The pre-trained model of the convolutional neural network is able to detect pre-trained classes including the data set from VOC and COCO, or you can also create a network with your own detection objects. For more information about YOLO, Darknet, available training data and training YOLO see the following link: [YOLO: Real-Time Object Detection](http://pjreddie.com/darknet/yolo/).
-
-The YOLO packages have been tested under **ROS Noetic** and **Ubuntu 20.04**. Note: We also provide branches that work under **ROS Melodic**, **ROS Foxy** and **ROS2**.
-
-This is research code, expect that it changes often and any fitness for a particular purpose is disclaimed.
-
-**Author: [Marko Bjelonic](https://www.markobjelonic.com), marko.bjelonic@mavt.ethz.ch**
-
-**Affiliation: [Robotic Systems Lab](http://www.rsl.ethz.ch/), ETH Zurich**
-
-![Darknet Ros example: Detection image](darknet_ros/doc/test_detection.png)
-![Darknet Ros example: Detection image](darknet_ros/doc/test_detection_anymal.png)
-
-Based on the [Pascal VOC](https://pjreddie.com/projects/pascal-voc-dataset-mirror/) 2012 dataset, YOLO can detect the 20 Pascal object classes:
-
-- person
-- bird, cat, cow, dog, horse, sheep
-- aeroplane, bicycle, boat, bus, car, motorbike, train
-- bottle, chair, dining table, potted plant, sofa, tv/monitor
-
-Based on the [COCO](http://cocodataset.org/#home) dataset, YOLO can detect the 80 COCO object classes:
-
-- person
-- bicycle, car, motorbike, aeroplane, bus, train, truck, boat
-- traffic light, fire hydrant, stop sign, parking meter, bench
-- cat, dog, horse, sheep, cow, elephant, bear, zebra, giraffe
-- backpack, umbrella, handbag, tie, suitcase, frisbee, skis, snowboard, sports ball, kite, baseball bat, baseball glove, skateboard, surfboard, tennis racket
-- bottle, wine glass, cup, fork, knife, spoon, bowl
-- banana, apple, sandwich, orange, broccoli, carrot, hot dog, pizza, donut, cake
-- chair, sofa, pottedplant, bed, diningtable, toilet, tvmonitor, laptop, mouse, remote, keyboard, cell phone, microwave, oven, toaster, sink, refrigerator, book, clock, vase, scissors, teddy bear, hair drier, toothbrush
-
-## Citing
-
-The YOLO methods used in this software are described in the paper: [You Only Look Once: Unified, Real-Time Object Detection](https://arxiv.org/abs/1506.02640).
-
-If you are using YOLO V3 for ROS, please add the following citation to your publication:
-
-M. Bjelonic
-**"YOLO ROS: Real-Time Object Detection for ROS"**,
-URL: https://github.com/leggedrobotics/darknet_ros, 2018.
-
-    @misc{bjelonicYolo2018,
-      author = {Marko Bjelonic},
-      title = {{YOLO ROS}: Real-Time Object Detection for {ROS}},
-      howpublished = {\url{https://github.com/leggedrobotics/darknet_ros}},
-      year = {2016--2018},
-    }
+This is a ROS package for YOLOv4. It is modified from the repository https://github.com/leggedrobotics/darknet_ros/
 
 ## Installation
 
-### Dependencies
+In order to install darknet_ros, clone the latest version from this repository into your catkin workspace and compile the package using ROS.
 
-This software is built on the Robotic Operating System ([ROS]), which needs to be [installed](http://wiki.ros.org) first. Additionally, YOLO for ROS depends on following software:
-
-- [OpenCV](http://opencv.org/) (computer vision library),
-- [boost](http://www.boost.org/) (c++ library),
-
-### Building
-
-[![Build Status](https://ci.leggedrobotics.com/buildStatus/icon?job=github_leggedrobotics/darknet_ros/master)](https://ci.leggedrobotics.com/job/github_leggedrobotics/job/darknet_ros/job/master/)
-
-In order to install darknet_ros, clone the latest version using SSH (see [how to set up an SSH key](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html)) from this repository into your catkin workspace and compile the package using ROS.
-
-    cd catkin_workspace/src
+    cd yolov4-ws/src
     git clone --recursive git@github.com:leggedrobotics/darknet_ros.git
     cd ../
 
