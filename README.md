@@ -9,24 +9,33 @@ This is a ROS package for YOLOv4. It is modified from the repository https://git
 In order to install darknet_ros, clone the latest version from this repository into your catkin workspace and compile the package using ROS.
 
     cd yolov4-ws/src
-    git clone --recursive https://github.com/t1mkhuan9/yolov4-ros-noetic
+    git clone --recursive https://github.com/t1mkhuan9/yolov4-ros-noetic darknet_ros
+
+Then compile the package by
+
     cd ../
+    catkin_make 
 
-To maximize performance, make sure to build in *Release* mode. You can specify the build type by setting
-
-    catkin_make -DCMAKE_BUILD_TYPE=Release
-
-or using the [Catkin Command Line Tools](http://catkin-tools.readthedocs.io/en/latest/index.html#)
-
-    catkin build darknet_ros -DCMAKE_BUILD_TYPE=Release
-
-Darknet on the CPU is fast (approximately 1.5 seconds on an Intel Core i7-6700HQ CPU @ 2.60GHz × 8) but it's like 500 times faster on GPU! You'll have to have an Nvidia GPU and you'll have to install CUDA. The CMakeLists.txt file automatically detects if you have CUDA installed or not. CUDA is a parallel computing platform and application programming interface (API) model created by Nvidia. If you do not have CUDA on your System the build process will switch to the CPU version of YOLO. If you are compiling with CUDA, you might receive the following build error:
+### Common Fixes
+If you are compiling with CUDA, you might receive the following build error:
 
     nvcc fatal : Unsupported gpu architecture 'compute_61'.
 
 This means that you need to check the compute capability (version) of your GPU. You can find a list of supported GPUs in CUDA here: [CUDA - WIKIPEDIA](https://en.wikipedia.org/wiki/CUDA#Supported_GPUs). Simply find the compute capability of your GPU and add it into darknet_ros/CMakeLists.txt. Simply add a similar line like
 
     -O3 -gencode arch=compute_62,code=sm_62
+
+This build error may also occur sometimes:
+
+    image.c:16:10: fatal error: stb_image.h: No such file or directory
+        #include "stb_image.h"
+
+This is because it is not correctly referenced. Change the include statement in `darknet/src/image.c` line 16 and line 20 to
+
+    #include "../3rdparty/stb/include/stb_image.h"
+    #include "../3rdparty/stb/include/stb_image_write.h"
+
+Notice: DO NOT change if the problem does not occur.
 
 ### Download weights
 
