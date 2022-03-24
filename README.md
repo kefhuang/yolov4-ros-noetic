@@ -47,6 +47,3 @@ Notice: DO NOT change if the problem does not occur.
 
     source devel/setup.zsh # or setup.bash
     roslaunch darknet_ros yolov4.launch
-
-## TO BE FIXED
-It is not showing the result image currently
