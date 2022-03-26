@@ -41,9 +41,11 @@ Notice: DO NOT change if the problem does not occur.
 
     cd darknet_ros/yolo_network_config/weights/
     wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights
+    wget https://github.com/AlexeyAB/darknet/releases/download/yolov4/yolov4-tiny.weights
 
 
 ## Basic Usage
 
     source devel/setup.zsh # or setup.bash
     roslaunch darknet_ros yolov4.launch
+    roslaunch darknet_ros yolov4-tiny.launch
